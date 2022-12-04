@@ -18,9 +18,9 @@ class WordlistGenerator:
         if self.max_keyword_conjunctions > len(self.keywords):
             raise ValueError("MAX_KEYWORD_CONJUNCTIONS must be <= len(KEYWORDS)")
 
-        connectors_iterator = iter(self.connectors)
+        connectors_iterator = tuple(iter(self.connectors))
         if self.use_numbers_as_connectors:
-            connectors_iterator = itertools.chain(self.connectors, self.numbers)
+            connectors_iterator = tuple(itertools.chain(self.connectors, self.numbers))
         
         for i in range(1,self.max_keyword_conjunctions+1):
             for elements in itertools.permutations(self.keywords, r=i):
