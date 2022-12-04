@@ -1,0 +1,8 @@
+.idea/
+.vscode/
+*.pyc
+.coverage
+dist/
+keywordlist.egg-info/
+.tox/
+coverage.xml
